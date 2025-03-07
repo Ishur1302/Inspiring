@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Ali Quotes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            color: #fff;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h1 {
+            font-size: 26px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .quote {
+            font-size: 18px;
+            font-weight: 300;
+            margin: 20px 0;
+            min-height: 80px;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 15px;
+            margin-top: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        button {
+            background: #ffcc00;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 5px 10px rgba(255, 204, 0, 0.5);
+            margin-top: 15px;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(255, 204, 0, 0.8);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Muhammad Ali Quotes</h1>
+    <p class="quote">Click the button for a quote!</p>
+    <img src="https://cdn.britannica.com/41/243941-050-9D8F156E/boxer-Cassius-Clay-May-17-1962-Bronx-New-York-Muhammad-Ali.jpg" alt="Muhammad Ali">
+    <button onclick="generateQuote()">Get Quote</button>
+</div>
+
+<script>
+    const quotes = [
+        "Float like a butterfly, sting like a bee. His hands can't hit what his eyes can't see.",
+        "Service to others is the rent you pay for your room here on earth.",
+        "I'm young; I'm handsome; I'm fast. I can't possibly be beat.",
+        "Don’t count the days; make the days count.",
+        "If my mind can conceive it, and my heart can believe it—then I can achieve it.",
+        "It isn’t the mountains ahead to climb that wear you out; it’s the pebble in your shoe.",
+        "If you even dream of beating me you'd better wake up and apologize.",
+        "Braggin' is when a person says something and can’t do it. I do what I say.",
+        "I am the greatest, I said that even before I knew I was.",
+        "He who is not courageous enough to take risks will accomplish nothing in life."
+    ];
+
+    function generateQuote() {
+        const quoteText = document.querySelector(".quote");
+        const randomIndex = Math.floor(Math.random() * quotes.length);
+        quoteText.innerHTML = `"${quotes[randomIndex]}"`;
+    }
+</script>
+
+</body>
+</html>
